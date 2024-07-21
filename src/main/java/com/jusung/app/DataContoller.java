@@ -18,15 +18,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;                              
 
 @RestController 
-@CrossOrigin(origins = "https://port-0-spring-qxz2eltvajtnv.sel5.cloudtype.app", allowCredentials = "true")//https://jusung.netlify.app
+//@CrossOrigin(origins = "http://localhost:3000") 
+@CrossOrigin(origins = "https://jusung.netlify.app")
 public class DataContoller {
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	//@CrossOrigin(origins = "http://localhost:8080")
 	@GetMapping("/")
 	public String home() {
 		log.trace("trace message");
 		log.debug("debug message");
-		log.info("info message"); // default
+		log.info("info message"); // default		
 		log.warn("warn message");
 		log.error("error message");
 		return "Data 준비중.....";
