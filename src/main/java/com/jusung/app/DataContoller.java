@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;                              
 
-
+@CrossOrigin("*") 
 @RestController 
 public class DataContoller {
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	//@CrossOrigin(origins = "http://localhost:8080")
-	@CrossOrigin(origins = "https://port-0-spring-qxz2eltvajtnv.sel5.cloudtype.app")
+	//@CrossOrigin(origins = "https://port-0-spring-qxz2eltvajtnv.sel5.cloudtype.app")
 	@GetMapping("/")
 	public String home() {
 		log.trace("trace message");
