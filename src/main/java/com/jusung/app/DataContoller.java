@@ -33,6 +33,7 @@ public class DataContoller {
 	
 	@PostMapping("/findAll")
 	public ResultDTO findAll() {
+		System.out.println("controll");
 		return uService.findAll();
 	}
 	

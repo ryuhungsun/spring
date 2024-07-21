@@ -16,6 +16,7 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public List<UserDTO> findAll() {
 		// TODO Auto-generated method stub
+		System.out.println("dao");
 		return uMapper.findAll();// uMapper.findAll();
 	}
 

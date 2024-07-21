@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public ResultDTO findAll() {
 		// TODO Auto-generated method stub
+		System.out.println("service");
 		rDto = new ResultDTO();
 		List<UserDTO> resultList = uDao.findAll();
 		if(resultList != null) {
