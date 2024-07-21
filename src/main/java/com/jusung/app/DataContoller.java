@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;                              
 
-@CrossOrigin(origins = "https://jusung.netlify.app")
 @RestController 
+@CrossOrigin(origins = "https://jusung.netlify.app",  allowedHeaders = "*")
 public class DataContoller {
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	//@CrossOrigin(origins = "http://localhost:8080")
