@@ -18,7 +18,7 @@ public class VueApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("https://jusung.netlify.app");
+                registry.addMapping("/**").allowedOrigins("https://port-0-spring-qxz2eltvajtnv.sel5.cloudtype.app");
             }
         };
     }
