@@ -38,15 +38,22 @@ public class DataContoller {
 	}
 	
 	@Autowired UserService uService;
+
+	@GetMapping("/findAll")
+	public ResultDTO findAll2() {
+		log.info("ddddddddddddddddddddddddddddd");
+		return null;
+	}
 	
 	@PostMapping("/findAll")
 	public ResultDTO findAll() {
+		log.info("ddddddddddddddddddddddddddddd");
 		log.trace("trace message");
 		log.debug("debug message");
-		log.info("info message"); // default
-		log.warn("warn message");
-		log.error("error message");
-		System.out.println("controll");
+		log.info("info message11"); // default
+		log.warn("warn message22");
+		log.error("error message33");
+		log.debug("controll");
 		return uService.findAll();
 	}
 	
