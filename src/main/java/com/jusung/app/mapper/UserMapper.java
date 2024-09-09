@@ -6,11 +6,15 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import com.jusung.app.dto.LogInDTO;
 import com.jusung.app.dto.UserDTO;
 
-@Mapper
+@Mapper 
 public interface UserMapper {
 
+	@Select("select * from employees where email=#{email} and pwd=#{pwd}")
+	public UserDTO logIn(LogInDTO loginDto);
+	
 	@Select("select * from user")
 	public List<UserDTO> findAll();
 	

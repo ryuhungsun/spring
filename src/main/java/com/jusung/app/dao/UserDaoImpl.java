@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.jusung.app.dto.LogInDTO;
 import com.jusung.app.dto.UserDTO;
 import com.jusung.app.mapper.UserMapper; 
 
@@ -13,6 +14,12 @@ public class UserDaoImpl implements UserDao{
 	
 	@Autowired UserMapper uMapper;
 
+	@Override
+	public UserDTO logIn(LogInDTO logInDTO) {
+		// TODO Auto-generated method stub
+		return uMapper.logIn(logInDTO);
+	}
+	
 	@Override
 	public List<UserDTO> findAll() {
 		// TODO Auto-generated method stub

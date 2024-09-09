@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jusung.app.dao.UserDao;
+import com.jusung.app.dto.LogInDTO;
 import com.jusung.app.dto.ResultDTO;
 import com.jusung.app.dto.UserDTO;
 
@@ -15,7 +16,21 @@ public class UserServiceImpl implements UserService{
 	private ResultDTO rDto;
 	
 	@Autowired UserDao uDao;
-	
+
+	@Override
+	public ResultDTO logIn(LogInDTO loginDto) {
+		// TODO Auto-generated method stub
+		System.out.println("service");
+		rDto = new ResultDTO();
+		UserDTO resultList = uDao.logIn(loginDto);
+		if(resultList != null) {
+			rDto.setState(true);
+			rDto.setResult(resultList);
+		}else {
+			rDto.setState(false);
+		}
+		return rDto;
+	}
 	@Override
 	public ResultDTO findAll() {
 		// TODO Auto-generated method stub
@@ -66,8 +81,8 @@ public class UserServiceImpl implements UserService{
 
 		System.out.println("uDto :"+uDto.name);
 		System.out.println("uDto :"+uDto.email);
-		System.out.println("uDto :"+uDto.pwd);
-		System.out.println("uDto :"+uDto.gender);
+//		System.out.println("uDto :"+uDto.pwd);
+//		System.out.println("uDto :"+uDto.gender);
 		int state = uDao.save(uDto);
 		if(state == 1) {
 			rDto.setState(true);

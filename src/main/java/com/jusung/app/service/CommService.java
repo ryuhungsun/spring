@@ -4,10 +4,10 @@ import com.jusung.app.dto.LogInDTO;
 import com.jusung.app.dto.ResultDTO;
 import com.jusung.app.dto.UserDTO;
 
-public interface UserService {
+public interface CommService {
 	public ResultDTO logIn(LogInDTO logInDto);
-	public ResultDTO findAll();
-	public ResultDTO editById(UserDTO uDto);
-	public ResultDTO delete(int no);
-	public ResultDTO save(UserDTO uDto);
+	public ResultDTO commCode();
+	public ResultDTO signUp(UserDTO userDT);
+	public ResultDTO menuList();
+	
 }

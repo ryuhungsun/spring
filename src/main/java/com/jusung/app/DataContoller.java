@@ -2,6 +2,7 @@ package com.jusung.app;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jusung.app.dto.LogInDTO;
 import com.jusung.app.dto.ResultDTO;
 import com.jusung.app.dto.UserDTO;
 import com.jusung.app.service.UserService;
@@ -22,15 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @CrossOrigin(origins = "https://jusung.netlify.app")
 public class DataContoller {
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	@GetMapping("/")
-	public String home() {
-		log.trace("trace message");
-		log.debug("debug message");
-		log.info("info message"); // default		
-		log.warn("warn message");
-		log.error("error message");
-		return "Data 준비중.....";
-	}
+	
 	
 	@GetMapping("/api")
 	public String api() {
@@ -41,9 +34,12 @@ public class DataContoller {
 
 	@GetMapping("/findAll")
 	public ResultDTO findAll2() {
-		log.info("ddddddddddddddddddddddddddddd");
-		return null;
+		log.info("ddddddddddddddddddddddddddddd111");
+		log.debug("controll");
+		return uService.findAll();
 	}
+	
+
 	
 	@PostMapping("/findAll")
 	public ResultDTO findAll() {
