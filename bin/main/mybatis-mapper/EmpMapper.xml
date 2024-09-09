@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jusung.app.mapper.EmpMapper">
+ 
+   <select id="empList" resultType="com.jusung.app.dto.EmpDTO"> 
+     SELECT auth, FN_CODE('auth',auth) auth2, emp_id empid, email,  name,
+			dept, FN_CODE('dept',dept) dept2, grade, FN_CODE('grade',grade) grade2,
+			gender, married, '11' test
+	FROM employees a
+	WHERE 1=1
+	<!--email=#{email} and pwd=#{pwd}-->
+	<if test='dept !=null'>
+		and dept=#{dept}
+ 	</if>
+	<if test='grade !=null'>
+		and grade=#{grade}
+ 	</if>
+	<if test='name !=null'>
+		and name like concat(#{name}, '%')
+ 	</if>
+   </select> 
+   
+   <select id="selectEmp" resultType="com.jusung.app.dto.EmpDTO"> 
+     SELECT auth, FN_CODE('auth',auth) auth2, emp_id empid, email,  name,
+			dept, FN_CODE('dept',dept) dept2, grade, FN_CODE('grade',grade) grade2,
+			gender, married, '11' test
+	FROM employees a
+	WHERE emp_id=#{empid}
+	</select>
+
+</mapper>
